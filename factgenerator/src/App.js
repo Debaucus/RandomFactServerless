@@ -4,12 +4,12 @@ import { FactArray } from "./components/factArray";
 import { useState } from "react";
 
 function App() {
-  const [newFact, setNewFact] = useState("Generate a Random Fact");
+  let factNumber = Math.floor(Math.random() * FactArray.length);
+
+  const [newFact, setNewFact] = useState(FactArray[factNumber]);
 
   function handleClick() {
-    let factNumber = Math.floor(Math.random() * FactArray.length);
-    console.log(FactArray[factNumber]);
-    setNewFact(FactArray[factNumber]);
+    setNewFact(FactArray[Math.floor(Math.random() * FactArray.length)]);
   }
 
   return (
